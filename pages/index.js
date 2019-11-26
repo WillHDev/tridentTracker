@@ -1,6 +1,6 @@
-import React from 'react'
 import Layout from '../components/Layout';
-import Link from 'next/link';
+import { withApollo }  from '../lib/apollo'
+
 
 const Home = () => (
   <Layout>
@@ -80,4 +80,4 @@ const Home = () => (
   </Layout>
 )
 
-export default Home
+export default withApollo(Home);
