@@ -1,8 +1,22 @@
 import Layout from '../components/Layout';
 import { withApollo }  from '../lib/apollo'
+import { useQuery } from '@apollo/react-hooks'
+import gql from 'graphql-tag';
 
 
-const Home = () => (
+const HELLO_QUERY = gql`
+query HelloQuery {
+  sayHello
+}
+`;
+
+const Home = () => { 
+  const { data, loading, error } = useQuery(HELLO_QUERY);
+  if (loading) return <div/>
+  console.log(data);
+
+  
+  return (
   <Layout>
 
     <div className="hero">
@@ -78,6 +92,8 @@ const Home = () => (
       }
     `}</style>
   </Layout>
-)
+  
+);
+    }
 
 export default withApollo(Home);
