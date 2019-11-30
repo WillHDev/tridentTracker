@@ -1,9 +1,10 @@
 import HabitButton from './HabitButton';
 
-const Habit = () => {
+const Habit = ({ habit }) => {
+    console.log(habit);
     return (
         <article>
-            <h3>Habit Title</h3>
+            <h3>{habit}</h3>
           <div>
            <HabitButton />
            <HabitButton />

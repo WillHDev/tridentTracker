@@ -1,19 +1,16 @@
-const Habit = () => {
+import { Form, Field } from '@leveluptuts/fresh';
+//fresh allows field to be referenced with whatever the lowercase
+//version is
+ 
+const HabitForm = ({ setHabits }) => {
     return (
-        <article>
-            <h3>Habit Title</h3>
-          <div>
-              <button>0</button>
-              <button>0</button>
-              <button>0</button>
-              <button>X</button>
-              <button>0</button>
-              <button>0</button>
-              <button>X</button>
-
-          </div>
-        </article>
+        <Form onSubmit={data => {
+            console.log(data)
+            setHabits( prevState => [...prevState, data.habit])
+        }}>
+            <Field>Habit</Field>
+        </Form>
     )
 }
 
-export default Habit;
+export default HabitForm;
