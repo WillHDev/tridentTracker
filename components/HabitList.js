@@ -1,19 +1,21 @@
 import Habit from './Habit';
 
 
-const HabitList = ({habits})  => {
+const HabitList = ({ habits })  => {
 
     return (
         <section>
             <h2> My Habits</h2>
-           {habits.map(habit => (
+            
+           {habits.map((habit, index) => (
                
-                   <Habit key={habit} habit={habit}/>
+                   <Habit key={habit} habit={habit} index={index}/>
                
            ))}
            
             
         </section>
-    )
-}
+    );
+};
+
 export default HabitList;
